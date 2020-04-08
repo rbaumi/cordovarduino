@@ -201,13 +201,12 @@ public class CdcAcmSerialDriver implements UsbSerialDriver {
         }
 
         private int sendAcmControlMessage(int request, int value, byte[] buf) throws IOException {
-            return 0;
-            // int len = mConnection.controlTransfer(
-            //         USB_RT_ACM, request, value, mControlIndex, buf, buf != null ? buf.length : 0, 5000);
-            // if(len < 0) {
-            //     throw new IOException("controlTransfer failed");
-            // }
-            // return len;
+            int len = mConnection.controlTransfer(
+                    USB_RT_ACM, request, value, mControlIndex, buf, buf != null ? buf.length : 0, 5000);
+            if(len < 0) {
+                throw new IOException("controlTransfer failed");
+            }
+            return len;
         }
 
         @Override
