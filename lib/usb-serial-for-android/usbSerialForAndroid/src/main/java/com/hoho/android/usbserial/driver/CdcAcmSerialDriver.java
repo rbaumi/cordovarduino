@@ -139,9 +139,9 @@ public class CdcAcmSerialDriver implements UsbSerialDriver {
                     mWriteEndpoint = ep;
                 }
             }
-            if (mControlEndpoint == null) {
-                throw new IOException("No control endpoint");
-            }
+            // if (mControlEndpoint == null) {
+            //     throw new IOException("No control endpoint");
+            // }
         }
 
         private void openInterface() throws IOException {
