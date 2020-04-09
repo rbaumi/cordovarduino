@@ -227,7 +227,7 @@ public class Serial extends CordovaPlugin {
 				UsbDeviceConnection connection = manager.openDevice(driver.getDevice());
 				if (connection != null) {
 					// get first port and open it
-					port = driver.getPorts().get(0);
+					port = driver.getPorts().get(1);
 					try {
 						// get connection params or the default values
 						baudRate = opts.has("baudRate") ? opts.getInt("baudRate") : 9600;
@@ -505,7 +505,7 @@ public class Serial extends CordovaPlugin {
 				UsbDeviceConnection connection = manager.openDevice(driver.getDevice());
 				if (connection != null) {
 					// get first port and open it
-					port = driver.getPorts().get(0);
+					port = driver.getPorts().get(1);
 					try {
 						port.open(connection);
 						port.setParameters(baudRate, dataBits, stopBits, parity);
